@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Council 15857 Contact</title>
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="topnav" id="myTopnav">
+      <a href="/index.html" class="active">Home</a>
+      <a href="/about.html">About Us/FAQs</a>
+      <a href="https://koc15857.square.site/">Council Square Site</a>
+      <a href="/links.html">Links</a>
+      <a href="/contact.html">Contact</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div class="container">
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input
+          type="hidden"
+          name="access_key"
+          value="1bdfd572-32b8-4785-8822-be983898a7e7"
+        />
+        <h1>Council 15857 Contact Us</h1>
+        <div>
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            autocomplete="name"
+            required
+            placeholder="Name"
+          />
+        </div>
+        <div>
+          <label for="email">E-mail:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            required
+            placeholder="E-mail"
+          />
+        </div>
+        <div>
+          <label for="phone">Phone no.:</label>
+          <input
+            type="text"
+            id="phone"
+            name="phone"
+            autocomplete="mobile"
+            required
+            placeholder="Phone no."
+          />
+        </div>
+        <div>
+          <label for="message">Ask us a question:</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            placeholder="Ask us a question"
+            required
+          ></textarea>
+        </div>
+        <!-- Adding the botcheck -->
+        <input
+          type="checkbox"
+          name="botcheck"
+          id="botcheck"
+          style="display: none"
+        />
+        <input type="hidden" name="redirect" value="/thanks.html" />
+        <br />
+        <button type="submit">Send a Message</button>
+      </form>
+    </div>
+    <script src="script.js" async defer></script>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us & FAQs</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Additional styles for the popup */
+    </style>
+  </head>
+  <body class="about-page">
+    <!-- Navigation Bar -->
+    <div class="topnav" id="myTopnav">
+      <a href="/index.html" class="active">Home</a>
+      <a href="/about.html">About Us/FAQs</a>
+      <a href="https://koc15857.square.site/">Council Square Site</a>
+      <a href="/links.html">Links</a>
+      <a href="/contact.html">Contact</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-section" id="faqSection">
+      <!-- FAQ cards will be dynamically generated here -->
+    </div>
+
+    <script>
+      // Function to create FAQ cards
+      function createFAQCard(question) {
+        var faqCard = document.createElement("div");
+        faqCard.className = "faq-card"; // Add class for FAQ card styling
+
+        var questionElement = document.createElement("h3");
+        questionElement.textContent = question;
+        faqCard.appendChild(questionElement);
+
+        // Add event listener to show answer on click
+        faqCard.addEventListener("click", function () {
+          // Retrieve the answer corresponding to the clicked question
+          var answer = faqData.find(function (faq) {
+            return faq.question === question;
+          }).answer;
+
+          // Create and show pop-up with answer
+          var popup = document.createElement("div");
+          popup.className = "popup";
+
+          var answerElement = document.createElement("div");
+          answerElement.innerHTML = answer;
+          popup.appendChild(answerElement);
+
+          var closeButton = document.createElement("button");
+          closeButton.textContent = "Close";
+          closeButton.className = "popup-closeButton";
+          closeButton.addEventListener("click", function () {
+            popup.parentNode.removeChild(popup);
+          });
+          popup.appendChild(closeButton);
+
+          document.body.appendChild(popup);
+        });
+
+        return faqCard;
+      }
+
+      // Function to populate FAQ section with FAQ cards
+      function generateFaqCards() {
+        var faqSection = document.getElementById("faqSection");
+        if (!faqSection) {
+          console.error("FAQ section element not found.");
+          return;
+        }
+
+        // Loop through faqData array and create FAQ cards
+        faqData.forEach(function (faq) {
+          var faqCard = createFAQCard(faq.question);
+          faqSection.appendChild(faqCard);
+        });
+      }
+
+      // Call the function to generate FAQ cards when the page loads
+      window.onload = generateFaqCards;
+    </script>
+    <script src="textdata.js"></script>
+  </body>
+</html>
