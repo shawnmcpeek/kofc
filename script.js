@@ -34,5 +34,15 @@ function toggleAnswer(faqId) {
   answer.classList.toggle("show");
 }
 
+// Function to toggle navigation menu
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+
 // Generate FAQ cards when the page loads
 window.onload = generateFaqCards;
