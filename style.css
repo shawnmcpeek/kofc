@@ -24,7 +24,7 @@ body {
 }
 
 /* Landing page styles */
-.landing {
+.landing, .bot, form {
   margin: 20px;
   padding: 20px;
   background-color: #3e0246;
@@ -37,6 +37,7 @@ body {
   color: #ffffff;
   border: #ffffff 1px solid;
 }
+
 
 /* Navigation bar styles */
 .topnav {
@@ -108,7 +109,7 @@ p {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.container {
+/* .container {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -119,12 +120,11 @@ p {
 /* Form styles */
 form {
   text-align: left; /* Align form content to the left */
-  background-color: navy;
   font-weight: bold; /* Adjusted to 'bold' */
   color: white;
   padding: 20px;
   margin-bottom: 20px;
-  border: 2px solid blueviolet; /* Corrected border syntax */
+  border: 2px solid white; /* Corrected border syntax */
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -167,8 +167,7 @@ form button {
   box-shadow: #333 3px 3px;
   border-radius: 20px;
   align-self: flex-end;
-}
-
+} */
 /* FAQ card styles */
 .about-page .faq-card {
   margin: 20px;
