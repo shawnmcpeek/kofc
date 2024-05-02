@@ -21,67 +21,85 @@
       </a>
     </div>
 
-    <!-- Container for links and tools -->
+    <!-- Container for info -->
     <div class="info_container">
-      <h1>Links</h1>
-      <div class="link-buttons">
-        <div>
+      <!-- Left container for links and tools -->
+      <div class="left-container">
+        <h1>Links</h1>
+        <div class="link-buttons">
+          <div>
+            <button
+              class="popup-button"
+              onclick="window.open('https://www.kofc.org', '_blank')"
+              rel="noopener"
+            >
+              Knights of Columbus
+            </button>
+            <span>Knights of Columbus</span>
+          </div>
+          <div>
+            <button
+              class="popup-button"
+              onclick="window.open('https://www.coloradokofc.org', '_blank')"
+              rel="noopener"
+            >
+              Colorado KofC
+            </button>
+            <span>Colorado Knights of Columbus</span>
+          </div>
+          <div>
+            <button
+              class="popup-button"
+              onclick="window.open('https://fc-kofc.com', '_blank')"
+              rel="noopener"
+            >
+              FootballCrazr
+            </button>
+            <span>FootballCrazr</span>
+          </div>
+          <div>
+            <button
+              class="popup-button"
+              onclick="window.open('https://www.kofc.org/en/forms/spa/invite.html?lang=en&form=10784C.01', '_blank')"
+              rel="noopener"
+            >
+              KofC Form 10784
+            </button>
+            <span
+              >Form 10784 (You have to get verified to submit, and then you can
+              send it anytime)</span
+            >
+          </div>
+        </div>
+
+        <h1>Tools</h1>
+        <p>
           <button
             class="popup-button"
-            onclick="window.open('https://www.kofc.org', '_blank')"
+            onclick="window.open('counter.html', '_blank')"
             rel="noopener"
           >
-            Knights of Columbus
+            Money Counter
           </button>
-          <span>Knights of Columbus</span>
-        </div>
-        <div>
-          <button
-            class="popup-button"
-            onclick="window.open('https://www.coloradokofc.org', '_blank')"
-            rel="noopener"
-          >
-            Colorado KofC
-          </button>
-          <span>Colorado Knights of Columbus</span>
-        </div>
-        <div>
-          <button
-            class="popup-button"
-            onclick="window.open('https://fc-kofc.com', '_blank')"
-            rel="noopener"
-          >
-            FootballCrazr
-          </button>
-          <span>FootballCrazr</span>
-        </div>
-        <div>
-          <button
-            class="popup-button"
-            onclick="window.open('https://www.kofc.org/en/forms/spa/invite.html?lang=en&form=10784C.01', '_blank')"
-            rel="noopener"
-          >
-            KofC Form 10784
-          </button>
-          <span
-            >Form 10784 (You have to get verified to submit, and then you can
-            send it anytime)</span
-          >
-        </div>
+          This is a simple program to make counting and tabulating money
+          received easy.
+        </p>
       </div>
 
-      <h1>Tools</h1>
-      <p>
-        <button
-          class="popup-button"
-          onclick="window.open('counter.html', '_blank')"
-          rel="noopener"
-        >
-          Money Counter
-        </button>
-        This is a simple program to make counting and tabulating money received
-        easy.
-      </p>
+      <!-- Right container for calendar -->
+      <div class="right-container">
+        <h1>Calendar</h1>
+        <div class="calendar">
+          <iframe
+            src="https://calendar.google.com/calendar/embed?src=a29mYzE1ODU3QGdtYWlsLmNvbQ"
+            style="border: 0"
+            width="300"
+            height="300"
+            frameborder="0"
+            scrolling="no"
+          ></iframe>
+        </div>
+      </div>
     </div>
   </body>
 </html>
