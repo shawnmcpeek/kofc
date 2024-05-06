@@ -44,5 +44,40 @@ function myFunction() {
   }
 }
 
-// Generate FAQ cards when the page loads
-window.onload = generateFaqCards;
+// Function to set active link based on current page
+function setActiveLink() {
+  var currentLocation = window.location.pathname;
+  var links = document.getElementById("myTopnav").getElementsByTagName("a");
+
+  for (var i = 0; i < links.length; i++) {
+    var link = links[i];
+    if (link.href.endsWith(currentLocation)) {
+      link.classList.add("active");
+    }
+  }
+}
+
+// Call setActiveLink function when the page loads
+window.onload = function () {
+  setActiveLink();
+
+  // Additional code to change navbar color to blue
+  var links = document.getElementById("myTopnav").getElementsByTagName("a");
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener("click", function () {
+      // Remove active class from all links
+      for (var j = 0; j < links.length; j++) {
+        links[j].classList.remove("active");
+      }
+      // Add active class to clicked link
+      this.classList.add("active");
+    });
+  }
+
+  // Generate FAQ cards when the page loads
+  generateFaqCards();
+
+  // Dynamically update copyright year
+  document.getElementById("copyright-year").textContent =
+    new Date().getFullYear();
+};

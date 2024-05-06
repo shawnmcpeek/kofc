@@ -205,6 +205,7 @@ p {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
+  justify-content: space-between; /* Align left and right containers to the edges */
 }
 
 .sub-container {
@@ -225,9 +226,10 @@ p {
 .link-buttons div span {
   flex: 1;
   text-align: left;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal; /* Allow text to wrap */
+  overflow: hidden; /* Hides any text that exceeds the container */
+  text-overflow: ellipsis; /* Displays an ellipsis (...) when text overflows */
+  font-size: .85rem;
 }
 
 .calendar {
@@ -235,4 +237,38 @@ p {
   height: 300px;
   overflow: hidden; /* Optional: Hide any overflow */
   margin-left: 5px;
+  justify-content: right;
+}
+
+/* Additional CSS for links.html */
+
+/* Ensure text within <p> elements doesn't exceed container width */
+.info_container p {
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+/* Make the calendar iframe responsive */
+.calendar iframe {
+  width: 90%; /* Make the calendar iframe take full width */
+  height: 300px; /* Set a fixed height for the calendar */
+}
+
+@media screen and (max-width: 600px) {
+  /* Adjust styles for smaller screens */
+  .info_container {
+    display: flex;
+    flex-wrap: wrap; /* Allow containers to wrap on smaller screens */
+    justify-content: space-between; /* Align containers to the left and right edges */
+  }
+
+  .left-container,
+  .right-container {
+    flex-basis: 100%; /* Make containers take full width on smaller screens */
+    margin: 10px; /* Add some margin for spacing */
+  }
+}
+
+.left-container p {
+  font-size: 0.85rem; /* Adjust the font size for the paragraph text */
 }
