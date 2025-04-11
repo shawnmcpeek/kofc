@@ -1,0 +1,14 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# This is a html, vanilla css, javascript project. Do not code scss or any other language or framework.
+# This needs to be a user friendly, professional, clean looking and operating website. 
+# if an aspect is working, like say a hamburger menu on the index.html, make that same exact implementation happen across all the pages. This should be a simple copy and paste of the implementation.
+# if an implementation, like a hamburger menu, is able to be built in a component style, like having a file that implements the menu and then importing it into the other html, do so.
+# Try to keep the styling simple. Use the same buttons across the page. There is no reason to have a background image or gradient for index, and then having a different block css code to implement the same exact thing on another page. 
+
+- You can @ files here
+- You can use markdown but dont have to

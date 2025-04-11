@@ -2,162 +2,125 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Cash Counter</title>
-    <meta name="description" content="Description of your website" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Cash Counter - Knights of Columbus Council 15857</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="description" content="Cash counter tool for Knights of Columbus Council #15857" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
-  <body class="about-page">
-    <!-- Navigation Bar -->
-    <div class="topnav" id="myTopnav">
-      <a href="index.html" id="home">Home</a>
-      <a href="https://koc15857.square.site/">Council Square Site</a>
-      <a href="links.html" id="links">Links</a>
-      <a href="contact.html" id="contact">Contact</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </div>
-    <h1>Cash Counter</h1>
-    <form id="cashCounterForm">
-      <label
-        >Number of 100s: <input type="number" id="hundreds" min="0" /></label
-      ><br />
-      <label>Number of 50s: <input type="number" id="fifties" min="0" /></label
-      ><br />
-      <label>Number of 20s: <input type="number" id="twenties" min="0" /></label
-      ><br />
-      <label>Number of 10s: <input type="number" id="tens" min="0" /></label
-      ><br />
-      <label>Number of 5s: <input type="number" id="fives" min="0" /></label
-      ><br />
-      <label>Number of 2s: <input type="number" id="twos" min="0" /></label
-      ><br />
-      <label>Number of 1s: <input type="number" id="ones" min="0" /></label
-      ><br />
-      <label
-        >Amount of checks: <input type="number" id="checks" min="0" /></label
-      ><br />
-      <label
-        ><input type="checkbox" id="countCoins" /> Are you counting
-        coins?</label
-      ><br />
-      <div id="coinInputs" style="display: none">
-        <label
-          >Number of dollar coins:
-          <input type="number" id="dollars" min="0" /></label
-        ><br />
-        <label
-          >Number of 50c coins:
-          <input type="number" id="halfDollars" min="0" /></label
-        ><br />
-        <label
-          >Number of quarters:
-          <input type="number" id="quarters" min="0" /></label
-        ><br />
-        <label
-          >Number of dimes: <input type="number" id="dimes" min="0" /></label
-        ><br />
-        <label
-          >Number of nickels:
-          <input type="number" id="nickels" min="0" /></label
-        ><br />
-        <label
-          >Number of pennies:
-          <input type="number" id="pennies" min="0" /></label
-        ><br />
+  <body>
+    <!-- Navigation Bar-->
+    <nav class="topnav" id="myTopnav">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <img src="kofc_emblem_1c_rev.png" alt="KofC Logo" height="40" />
+        </a>
+        <div class="nav-title">
+          <h1>Cash Counter</h1>
+          <p>Count cash and checks for Knights of Columbus Council #15857</p>
+        </div>
+        <button type="button" class="hamburger">≡</button>
+        <div class="nav-links">
+          <a href="index.html" id="home">Home</a>
+          <a href="https://koc15857.square.site/">Council Square Site</a>
+          <a href="about.html" id="about">About</a>
+          <a href="links.html" id="links">Links</a>
+          <a href="contact.html" id="contact">Contact</a>
+        </div>
       </div>
-      <button type="button" id="calculateButton">Calculate</button>
-    </form>
-    <p id="totalResult" style="color: white"></p>
+    </nav>
 
-    <script>
-      const form = document.getElementById("cashCounterForm");
-      const countCoinsCheckbox = document.getElementById("countCoins");
-      const coinInputs = document.getElementById("coinInputs");
-      const calculateButton = document.getElementById("calculateButton");
-      const totalResult = document.getElementById("totalResult");
+    <div class="container">
+      <div class="card">
+        <h2>Cash Counter Tool</h2>
+        <form id="cashCounterForm" class="cash-counter-container">
+          <div class="form-group">
+            <label for="hundreds">Number of $100 bills:</label>
+            <input type="number" id="hundreds" min="0" value="0">
+          </div>
 
-      countCoinsCheckbox.addEventListener("change", () => {
-        coinInputs.style.display = countCoinsCheckbox.checked
-          ? "block"
-          : "none";
-      });
+          <div class="form-group">
+            <label for="fifties">Number of $50 bills:</label>
+            <input type="number" id="fifties" min="0" value="0">
+          </div>
 
-      calculateButton.addEventListener("click", () => {
-        // Retrieve and calculate values from input fields
-        const hundreds =
-          parseInt(document.getElementById("hundreds").value, 10) || 0;
-        const fifties =
-          parseInt(document.getElementById("fifties").value, 10) || 0;
-        const twenties =
-          parseInt(document.getElementById("twenties").value, 10) || 0;
-        const tens = parseInt(document.getElementById("tens").value, 10) || 0;
-        const fives = parseInt(document.getElementById("fives").value, 10) || 0;
-        const twos = parseInt(document.getElementById("twos").value, 10) || 0;
-        const ones = parseInt(document.getElementById("ones").value, 10) || 0;
-        const checks = parseFloat(document.getElementById("checks").value) || 0;
+          <div class="form-group">
+            <label for="twenties">Number of $20 bills:</label>
+            <input type="number" id="twenties" min="0" value="0">
+          </div>
 
-        if (countCoinsCheckbox.checked) {
-          const dollars =
-            parseInt(document.getElementById("dollars").value, 10) || 0;
-          const halfDollars =
-            parseInt(document.getElementById("halfDollars").value, 10) || 0;
-          const quarters =
-            parseInt(document.getElementById("quarters").value, 10) || 0;
-          const dimes =
-            parseInt(document.getElementById("dimes").value, 10) || 0;
-          const nickels =
-            parseInt(document.getElementById("nickels").value, 10) || 0;
-          const pennies =
-            parseInt(document.getElementById("pennies").value, 10) || 0;
+          <div class="form-group">
+            <label for="tens">Number of $10 bills:</label>
+            <input type="number" id="tens" min="0" value="0">
+          </div>
 
-          // Calculate the total value of coins
-          const sumTotal =
-            hundreds * 100 +
-            fifties * 50 +
-            twenties * 20 +
-            tens * 10 +
-            fives * 5 +
-            twos * 2 +
-            ones * 1 +
-            checks +
-            dollars * 1 +
-            halfDollars * 0.5 +
-            quarters * 0.25 +
-            dimes * 0.1 +
-            nickels * 0.05 +
-            pennies * 0.01;
+          <div class="form-group">
+            <label for="fives">Number of $5 bills:</label>
+            <input type="number" id="fives" min="0" value="0">
+          </div>
 
-          totalResult.textContent = `Total money counted: $${sumTotal.toFixed(
-            2
-          )}`;
-        } else {
-          // Calculate the total value of bills and checks
-          const sum =
-            hundreds * 100 +
-            fifties * 50 +
-            twenties * 20 +
-            tens * 10 +
-            fives * 5 +
-            twos * 2 +
-            ones * 1 +
-            checks;
+          <div class="form-group">
+            <label for="ones">Number of $1 bills:</label>
+            <input type="number" id="ones" min="0" value="0">
+          </div>
 
-          totalResult.textContent = `Total money counted: $${sum.toFixed(2)}`;
-        }
-      });
-    </script>
-    <!-- Include Bootstrap JS (make sure the path is correct) -->
-    <script src="path-to-bootstrap.js"></script>
-    <script src="script.js" async defer></script>
+          <div class="form-group">
+            <label for="checks">Total amount of checks:</label>
+            <input type="number" id="checks" min="0" step="0.01" value="0">
+          </div>
+
+          <div class="form-group">
+            <label>
+              <input type="checkbox" id="countCoins"> Include coins
+            </label>
+          </div>
+
+          <div id="coinInputs" style="display: none;">
+            <div class="form-group">
+              <label for="dollars">Number of $1 coins:</label>
+              <input type="number" id="dollars" min="0" value="0">
+            </div>
+
+            <div class="form-group">
+              <label for="halfDollars">Number of 50¢ coins:</label>
+              <input type="number" id="halfDollars" min="0" value="0">
+            </div>
+
+            <div class="form-group">
+              <label for="quarters">Number of quarters:</label>
+              <input type="number" id="quarters" min="0" value="0">
+            </div>
+
+            <div class="form-group">
+              <label for="dimes">Number of dimes:</label>
+              <input type="number" id="dimes" min="0" value="0">
+            </div>
+
+            <div class="form-group">
+              <label for="nickels">Number of nickels:</label>
+              <input type="number" id="nickels" min="0" value="0">
+            </div>
+
+            <div class="form-group">
+              <label for="pennies">Number of pennies:</label>
+              <input type="number" id="pennies" min="0" value="0">
+            </div>
+          </div>
+
+          <button type="button" id="calculateButton" class="btn btn-primary">Calculate Total</button>
+          <p id="totalResult" class="total-result"></p>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js" type="module"></script>
+    <footer>
+      <p>© 2025 Knights of Columbus Council 15857. All rights reserved.</p>
+    </footer>
   </body>
-  <footer>
-    <p>&copy; <span id="copyright-year"></span> Knights of Columbus Council 15857. All rights reserved.</p>
-</html>
+</html> 
