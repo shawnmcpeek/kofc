@@ -1,6 +1,6 @@
 /* Base Variables */
 :root {
-  /* Color System */
+  /* Light Mode Colors */
   --primary: #2563eb;
   --primary-dark: #1d4ed8;
   --secondary: #64748b;
@@ -9,6 +9,26 @@
   --surface: #ffffff;
   --text: #1e293b;
   --text-light: #64748b;
+  
+  /* Dark Mode Colors */
+  --dark-primary: #3b82f6;
+  --dark-primary-dark: #2563eb;
+  --dark-secondary: #94a3b8;
+  --dark-accent: #f59e0b;
+  --dark-background: #0f172a;
+  --dark-surface: #1e293b;
+  --dark-text: #f8fafc;
+  --dark-text-light: #94a3b8;
+  
+  /* Current Theme Colors (will be set by JavaScript) */
+  --current-primary: var(--primary);
+  --current-primary-dark: var(--primary-dark);
+  --current-secondary: var(--secondary);
+  --current-accent: var(--accent);
+  --current-background: var(--background);
+  --current-surface: var(--surface);
+  --current-text: var(--text);
+  --current-text-light: var(--text-light);
   
   /* Typography */
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -33,6 +53,18 @@
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
+/* Dark Mode */
+[data-theme="dark"] {
+  --current-primary: var(--dark-primary);
+  --current-primary-dark: var(--dark-primary-dark);
+  --current-secondary: var(--dark-secondary);
+  --current-accent: var(--dark-accent);
+  --current-background: var(--dark-background);
+  --current-surface: var(--dark-surface);
+  --current-text: var(--dark-text);
+  --current-text-light: var(--dark-text-light);
+}
+
 /* Reset & Base Styles */
 * {
   margin: 0;
@@ -44,14 +76,15 @@ body {
   font-family: var(--font-family);
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
-  color: var(--text);
-  background: linear-gradient(135deg, #153677, #4e085f);
+  color: var(--current-text);
+  background: var(--current-background);
   min-height: 100vh;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* Layout Components */
@@ -64,32 +97,34 @@ body {
 }
 
 .card {
-  background: var(--surface);
+  background: var(--current-surface);
   border-radius: var(--radius-lg);
   padding: var(--spacing-lg);
   margin-bottom: var(--spacing-lg);
   box-shadow: var(--shadow-md);
   border: 1px solid transparent;
-  transition: all 0.2s;
+  transition: all 0.3s;
+  color: var(--current-text);
 }
 
 .card h2 {
   text-align: center;
   margin-bottom: var(--spacing-lg);
-  color: var(--primary);
+  color: var(--current-primary);
 }
 
 .card:hover {
-  border-color: var(--primary);
+  border-color: var(--current-primary);
 }
 
 /* Navigation */
 .topnav {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  background: linear-gradient(135deg, var(--current-primary), var(--current-primary-dark));
   box-shadow: var(--shadow-md);
   position: sticky;
   top: 0;
   z-index: 1000;
+  color: white;
 }
 
 .nav-container {
@@ -136,7 +171,7 @@ body {
 }
 
 .nav-links a {
-  color: white;
+  color: currentColor;
   text-decoration: none;
   padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--radius-sm);
@@ -151,10 +186,10 @@ body {
   display: none;
   background: none;
   border: none;
-  color: white;
-  font-size: 2rem;
+  font-size: 1.5rem;
   cursor: pointer;
-  padding: var(--spacing-sm);
+  color: currentColor;
+  padding: 0.5rem;
 }
 
 /* Mobile Navigation */
@@ -163,13 +198,17 @@ body {
     display: block;
   }
 
+  .theme-toggle {
+    margin-right: 0;
+  }
+
   .nav-links {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    background-color: var(--primary-dark);
+    background-color: var(--current-primary-dark);
     padding: var(--spacing-sm) 0;
     flex-direction: column;
   }
@@ -187,7 +226,7 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  color: var(--text);
+  color: var(--current-text);
   margin-bottom: var(--spacing-sm);
   line-height: 1.2;
 }
@@ -199,7 +238,7 @@ h2 {
 
 p {
   margin-bottom: var(--spacing-md);
-  color: var(--text-light);
+  color: var(--current-text-light);
 }
 
 /* Buttons */
@@ -217,22 +256,22 @@ p {
 }
 
 .btn-primary {
-  background-color: var(--primary);
+  background-color: var(--current-primary);
   color: white;
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-dark);
+  background-color: var(--current-primary-dark);
 }
 
 .btn-secondary {
-  background-color: var(--surface);
-  color: var(--text);
-  border: 1px solid var(--secondary);
+  background-color: var(--current-surface);
+  color: var(--current-text);
+  border: 1px solid var(--current-secondary);
 }
 
 .btn-secondary:hover {
-  border-color: var(--primary);
+  border-color: var(--current-primary);
 }
 
 /* Forms */
@@ -243,7 +282,7 @@ p {
 .form-group label {
   display: block;
   margin-bottom: var(--spacing-xs);
-  color: var(--text);
+  color: var(--current-text);
   font-weight: 500;
 }
 
@@ -259,12 +298,12 @@ textarea,
 select {
   width: 100%;
   padding: var(--spacing-sm);
-  border: 1px solid var(--secondary);
+  border: 1px solid var(--current-secondary);
   border-radius: var(--radius-sm);
   font-family: var(--font-family);
   font-size: var(--font-size-base);
-  color: var(--text);
-  background-color: var(--surface);
+  color: var(--current-text);
+  background-color: var(--current-surface);
   transition: border-color 0.2s;
 }
 
@@ -272,7 +311,7 @@ input:focus,
 textarea:focus,
 select:focus {
   outline: none;
-  border-color: var(--primary);
+  border-color: var(--current-primary);
 }
 
 textarea {
@@ -292,13 +331,14 @@ input[type="checkbox"] + label {
 
 /* Footer */
 footer {
-  background-color: var(--surface);
+  background-color: var(--current-surface);
   padding: var(--spacing-lg);
   text-align: center;
-  color: var(--text-light);
+  color: var(--current-text-light);
   flex-shrink: 0;
   width: 100%;
   margin-top: auto;
+  border-top: 1px solid var(--current-secondary);
 }
 
 /* Responsive Adjustments */
@@ -337,7 +377,7 @@ footer {
   display: block;
   padding: var(--spacing-md);
   text-decoration: none;
-  border-color: var(--secondary);
+  border-color: var(--current-secondary);
   margin-bottom: 0;
 }
 
@@ -346,12 +386,12 @@ footer {
 }
 
 .link-card h3 {
-  color: var(--primary);
+  color: var(--current-primary);
   margin-bottom: var(--spacing-xs);
 }
 
 .link-card p {
-  color: var(--text-light);
+  color: var(--current-text-light);
   margin: 0;
 }
 
@@ -366,10 +406,10 @@ footer {
   display: inline-flex;
   align-items: center;
   padding: var(--spacing-sm) var(--spacing-md);
-  background-color: var(--surface);
-  color: var(--primary);
+  background-color: var(--current-surface);
+  color: var(--current-primary);
   text-decoration: none;
-  border: 1px solid var(--secondary);
+  border: 1px solid var(--current-secondary);
   border-radius: var(--radius-sm);
   font-weight: 500;
   transition: all 0.2s;
@@ -377,9 +417,8 @@ footer {
 }
 
 .link-button:hover {
-  border-color: var(--primary);
-  background-color: var(--primary);
-  color: white;
+  border-color: currentColor;
+  background-color: color-mix(in srgb, currentColor 10%, transparent);
 }
 
 .link-item {
@@ -389,7 +428,50 @@ footer {
 }
 
 .link-description {
-  color: var(--text-light);
+  color: var(--current-text-light);
   font-size: 0.9em;
   margin: 0;
+}
+
+/* Add currentColor to icons */
+.nav-links a i {
+  color: currentColor;
+  margin-right: 0.5rem;
+}
+
+/* Use currentColor for decorative elements */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: currentColor;
+  opacity: 0.1;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: none;
+  border: none;
+  color: currentColor;
+  padding: var(--spacing-sm);
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  margin-right: var(--spacing-sm);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.theme-toggle i {
+  color: currentColor;
+  font-size: 1.2rem;
 }
