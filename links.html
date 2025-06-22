@@ -7,100 +7,107 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta name="description" content="Useful links for Knights of Columbus Council #15857" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css?v=1.6" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Mammoth.js for DOCX processing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
   </head>
   <body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Navigation Bar-->
-    <nav class="topnav" id="myTopnav">
+    <nav class="topnav" id="myTopnav" role="navigation" aria-label="Main navigation">
       <div class="nav-container">
-        <a href="index.html" class="logo">
-          <img src="kofc_emblem_1c_rev.png" alt="KofC Logo" height="40" />
+        <a href="index.html" class="logo" aria-label="Home">
+          <img src="kofc_emblem_1c_rev.png" alt="Knights of Columbus Logo" height="40" />
         </a>
         <div class="nav-title">
           <h1>Useful Links</h1>
           <p>Important resources and links for Knights of Columbus Council #15857</p>
         </div>
-        <button type="button" class="hamburger">≡</button>
-        <div class="nav-links">
-          <a href="index.html" id="home">Home</a>
-          <a href="https://koc15857.square.site/">Council Square Site</a>
-          <a href="about.html" id="about">About</a>
-          <a href="links.html" id="links">Links</a>
-          <a href="contact.html" id="contact">Contact</a>
+        <button type="button" class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">≡</button>
+        <div class="nav-links" id="nav-links" role="menu">
+          <a href="index.html" id="home" role="menuitem">Home</a>
+          <a href="https://koc15857.square.site/" role="menuitem">Council Square Site</a>
+          <a href="about.html" id="about" role="menuitem">About</a>
+          <a href="links.html" id="links" role="menuitem" aria-current="page">Links</a>
+          <a href="contact.html" id="contact" role="menuitem">Contact</a>
         </div>
       </div>
     </nav>
 
-    <div class="container">
-      <div class="card">
-        <h2>Important Links</h2>
-        <div class="link-section">
-          <div class="link-item">
-            <a href="https://www.kofc.org" class="link-button" target="_blank" rel="noopener">
+    <main id="main-content" class="container" role="main">
+      <section class="card" aria-labelledby="important-links-heading">
+        <h2 id="important-links-heading">Important Links</h2>
+        <div class="link-section" role="list">
+          <div class="link-item" role="listitem">
+            <a href="https://www.kofc.org" class="link-button" target="_blank" rel="noopener" aria-describedby="kofc-desc">
               Knights of Columbus
             </a>
-            <p class="link-description">Official Supreme Council website</p>
+            <p id="kofc-desc" class="link-description">Official Supreme Council website</p>
           </div>
-          <div class="link-item">
-            <a href="https://www.coloradokofc.org" class="link-button" target="_blank" rel="noopener">
+          <div class="link-item" role="listitem">
+            <a href="https://www.coloradokofc.org" class="link-button" target="_blank" rel="noopener" aria-describedby="colorado-desc">
               Colorado KofC
             </a>
-            <p class="link-description">Colorado Knights of Columbus State Council</p>
+            <p id="colorado-desc" class="link-description">Colorado Knights of Columbus State Council</p>
           </div>
-          <div class="link-item">
-            <a href="https://fc-kofc.com" class="link-button" target="_blank" rel="noopener">
-              FootballCrazr
+          <div class="link-item" role="listitem">
+            <a href="https://fc-kofc.com" class="link-button" target="_blank" rel="noopener" aria-describedby="football-desc">
+              FundCrazr
             </a>
-            <p class="link-description">FootballCrazr fundraising program</p>
+            <p id="football-desc" class="link-description">FundCrazr fundraising program</p>
           </div>
-          <div class="link-item">
-            <a href="https://www.kofc.org/en/forms/spa/invite.html?lang=en&form=10784C.01" class="link-button" target="_blank" rel="noopener">
+          <div class="link-item" role="listitem">
+            <a href="https://www.kofc.org/en/forms/spa/invite.html?lang=en&form=10784C.01" class="link-button" target="_blank" rel="noopener" aria-describedby="form-desc">
               KofC Form 10784
             </a>
-            <p class="link-description">Fraternal Programs Report Form (requires verification to submit)</p>
+            <p id="form-desc" class="link-description">Fraternal Programs Report Form (requires verification to submit)</p>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="card">
-        <h2>Council Tools</h2>
-        <div class="link-section">
-          <div class="link-item">
-            <a href="counter.html" class="link-button">
+      <section class="card" aria-labelledby="council-tools-heading">
+        <h2 id="council-tools-heading">Council Tools</h2>
+        <div class="link-section" role="list">
+          <div class="link-item" role="listitem">
+            <a href="counter.html" class="link-button" aria-describedby="counter-desc">
               Money Counter
             </a>
-            <p class="link-description">Simple program to make counting and tabulating money received easy</p>
+            <p id="counter-desc" class="link-description">Simple program to make counting and tabulating money received easy</p>
           </div>
-          <div class="link-item">
-            <a href="https://kcannualsurvey.web.app/" class="link-button">
+          <div class="link-item" role="listitem">
+            <a href="https://kcannualsurvey.web.app/" class="link-button" aria-describedby="survey-desc">
               Annual Fraternal Survey Data Generator
             </a>
-            <p class="link-description">Program for gathering and generating data for the Annual Survey of Fraternal Activity (1728). Enter data from Form 10784 throughout the year for easy annual reporting.</p>
+            <p id="survey-desc" class="link-description">Program for gathering and generating data for the Annual Survey of Fraternal Activity (1728). Enter data from Form 10784 throughout the year for easy annual reporting.</p>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="card">
-        <h2>Council Calendar</h2>
+      <section class="card" aria-labelledby="calendar-heading">
+        <h2 id="calendar-heading">Council Calendar</h2>
         <iframe 
           src="https://calendar.google.com/calendar/embed?height=400&wkst=1&bgcolor=%23ffffff&ctz=America%2FDenver&mode=MONTH&showNav=1&showDate=1&showPrint=0&showTabs=0&showCalendars=0&showTz=0&src=a29mYzE1ODU3QGdtYWlsLmNvbQ"
           style="border-width: 0; width: 100%; height: 400px; border-radius: var(--radius-sm);"
           frameborder="0"
           loading="lazy"
           sandbox="allow-scripts allow-same-origin allow-popups"
-          title="Council Calendar">
+          title="Council Calendar"
+          aria-label="Council Calendar - View upcoming events and meetings">
         </iframe>
-      </div>
-    </div>
+      </section>
+    </main>
 
+    <script src="docx-chatbot.js"></script>
     <script src="chatbot.js"></script>
     <script src="theme.js"></script>
     <script src="script.js" type="module"></script>
-    <footer>
+    <footer role="contentinfo">
       <p>&copy; <span id="copyright-year"></span> Knights of Columbus Council 15857. All rights reserved.</p>
     </footer>
   </body>

@@ -5,75 +5,101 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Contact - Knights of Columbus Council 15857</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <meta name="description" content="Contact information for Knights of Columbus Council #15857" />
+    <meta name="description" content="Contact Knights of Columbus Council #15857" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css?v=1.6" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Mammoth.js for DOCX processing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
   </head>
   <body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Navigation Bar-->
-    <nav class="topnav" id="myTopnav">
+    <nav class="topnav" id="myTopnav" role="navigation" aria-label="Main navigation">
       <div class="nav-container">
-        <a href="index.html" class="logo">
-          <img src="kofc_emblem_1c_rev.png" alt="KofC Logo" height="40" />
+        <a href="index.html" class="logo" aria-label="Home">
+          <img src="kofc_emblem_1c_rev.png" alt="Knights of Columbus Logo" height="40" />
         </a>
         <div class="nav-title">
           <h1>Contact Us</h1>
-          <p>Get in touch with Knights of Columbus Council #15857</p>
+          <p>Get in touch with Council #15857</p>
         </div>
-        <button type="button" class="hamburger">≡</button>
-        <div class="nav-links">
-          <a href="index.html" id="home">Home</a>
-          <a href="https://koc15857.square.site/">Council Square Site</a>
-          <a href="about.html" id="about">About</a>
-          <a href="links.html" id="links">Links</a>
-          <a href="contact.html" id="contact">Contact</a>
+        <button type="button" class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">≡</button>
+        <div class="nav-links" id="nav-links" role="menu">
+          <a href="index.html" id="home" role="menuitem">Home</a>
+          <a href="https://koc15857.square.site/" role="menuitem">Council Square Site</a>
+          <a href="about.html" id="about" role="menuitem">About</a>
+          <a href="links.html" id="links" role="menuitem">Links</a>
+          <a href="contact.html" id="contact" role="menuitem" aria-current="page">Contact</a>
         </div>
       </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="container">
-      <div class="card">
-        <h2>Contact Form</h2>
-        <form
-            action="https://api.web3forms.com/submit"
-            method="POST"
-            class="contact-form card">
-          <input type="hidden" name="access_key" value="1bdfd572-32b8-4785-8822-be983898a7e7" />
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required placeholder="Your name">
+    <main id="main-content" class="container" role="main">
+      <section class="card" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact Information</h2>
+        <p>For more information about our council or to join the Knights of Columbus, please contact us:</p>
+        
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <h3>Location</h3>
+              <p>Guardian Angels Parish<br>Mead, CO</p>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required placeholder="Your email">
+          
+          <div class="contact-item">
+            <i class="fas fa-calendar"></i>
+            <div>
+              <h3>Meetings</h3>
+              <p>Council meetings are held regularly. Contact us for the current schedule.</p>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" placeholder="Your phone number">
+          
+          <div class="contact-item">
+            <i class="fas fa-info-circle"></i>
+            <div>
+              <h3>Membership</h3>
+              <p>Open to Catholic men aged 18 and older. Contact us to learn more about joining.</p>
+            </div>
           </div>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="form-heading">
+        <h2 id="form-heading">Send us a Message</h2>
+        <form action="thanks.html" method="get" class="contact-form">
           <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required placeholder="Your message"></textarea>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
           </div>
-          <input type="checkbox" name="botcheck" id="botcheck" style="display: none" />
-          <input type="hidden" name="redirect" value="https://shawnmcpeek.github.io/kofc/thanks.html" />
-          <button type="submit" class="btn btn-primary btn-lg">
-            <i class="fas fa-paper-plane"></i>
-            Send Message
-          </button>
+          
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Send Message</button>
         </form>
-      </div>
+      </section>
     </main>
 
+    <script src="docx-chatbot.js"></script>
     <script src="chatbot.js"></script>
     <script src="theme.js"></script>
     <script src="script.js" type="module"></script>
-    <footer>
+    <footer role="contentinfo">
       <p>&copy; <span id="copyright-year"></span> Knights of Columbus Council 15857. All rights reserved.</p>
     </footer>
   </body>
