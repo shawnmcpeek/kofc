@@ -2359,7 +2359,6 @@ select:focus-visible {
     text-align: center;
     gap: var(--spacing-sm);
   }
-  
   .contact-item i {
     margin-top: 0;
   }

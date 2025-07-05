@@ -9,13 +9,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (hamburger && mobileNav) {
         hamburger.addEventListener('click', function() {
-            mobileNav.classList.toggle('responsive');
+            mobileNav.classList.toggle('active');
         });
 
         // Close menu when clicking outside
         document.addEventListener('click', function(event) {
             if (!hamburger.contains(event.target) && !mobileNav.contains(event.target)) {
-                mobileNav.classList.remove('responsive');
+                mobileNav.classList.remove('active');
             }
         });
     }
