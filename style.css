@@ -1,20 +1,20 @@
 /* Material 3 Expressive Theming - Color System */
 :root {
-  /* Material 3 Color Tokens - Charcoal Grey Theme */
-  --md-sys-color-primary: #374151;
+  /* Material 3 Color Tokens - Medium Blue Theme */
+  --md-sys-color-primary: #0000CD;
   --md-sys-color-on-primary: #FFFFFF;
-  --md-sys-color-primary-container: #E5E7EB;
-  --md-sys-color-on-primary-container: #1F2937;
+  --md-sys-color-primary-container: #E6E6FF;
+  --md-sys-color-on-primary-container: #000080;
   
-  --md-sys-color-secondary: #6B7280;
+  --md-sys-color-secondary: #4A90E2;
   --md-sys-color-on-secondary: #FFFFFF;
-  --md-sys-color-secondary-container: #F3F4F6;
-  --md-sys-color-on-secondary-container: #374151;
+  --md-sys-color-secondary-container: #E8F4FD;
+  --md-sys-color-on-secondary-container: #1E3A8A;
   
-  --md-sys-color-tertiary: #7D5260;
+  --md-sys-color-tertiary: #7B68EE;
   --md-sys-color-on-tertiary: #FFFFFF;
-  --md-sys-color-tertiary-container: #FFD8E4;
-  --md-sys-color-on-tertiary-container: #31111D;
+  --md-sys-color-tertiary-container: #F0EDFF;
+  --md-sys-color-on-tertiary-container: #4C1D95;
   
   --md-sys-color-surface: #FFFBFE;
   --md-sys-color-on-surface: #1C1B1F;
@@ -32,21 +32,21 @@
   --md-sys-color-outline: #79747E;
   --md-sys-color-outline-variant: #CAC4D0;
   
-  /* Material 3 Dark Theme Colors - Charcoal Grey Theme */
-  --md-sys-color-primary-dark: #9CA3AF;
-  --md-sys-color-on-primary-dark: #1F2937;
-  --md-sys-color-primary-container-dark: #374151;
-  --md-sys-color-on-primary-container-dark: #E5E7EB;
+  /* Material 3 Dark Theme Colors - Medium Blue Theme */
+  --md-sys-color-primary-dark: #5C7CFF;
+  --md-sys-color-on-primary-dark: #000080;
+  --md-sys-color-primary-container-dark: #0000CD;
+  --md-sys-color-on-primary-container-dark: #E6E6FF;
   
-  --md-sys-color-secondary-dark: #D1D5DB;
-  --md-sys-color-on-secondary-dark: #374151;
-  --md-sys-color-secondary-container-dark: #4B5563;
-  --md-sys-color-on-secondary-container-dark: #F3F4F6;
+  --md-sys-color-secondary-dark: #7BB3FF;
+  --md-sys-color-on-secondary-dark: #1E3A8A;
+  --md-sys-color-secondary-container-dark: #4A90E2;
+  --md-sys-color-on-secondary-container-dark: #E8F4FD;
   
-  --md-sys-color-tertiary-dark: #EFB8C8;
-  --md-sys-color-on-tertiary-dark: #492532;
-  --md-sys-color-tertiary-container-dark: #633B48;
-  --md-sys-color-on-tertiary-container-dark: #FFD8E4;
+  --md-sys-color-tertiary-dark: #9B8AFF;
+  --md-sys-color-on-tertiary-dark: #4C1D95;
+  --md-sys-color-tertiary-container-dark: #7B68EE;
+  --md-sys-color-on-tertiary-container-dark: #F0EDFF;
   
   --md-sys-color-surface-dark: #141218;
   --md-sys-color-on-surface-dark: #E6E1E5;
