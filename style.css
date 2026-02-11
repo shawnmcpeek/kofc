@@ -263,6 +263,18 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* Material 3 Typography Classes */
 .display-large {
   font-size: var(--md-sys-typescale-display-large-size);
@@ -505,6 +517,7 @@ body {
 }
 
 .hamburger {
+  display: none; /* visible only in mobile @media (max-width: 768px) */
   background: none;
   border: none;
   font-size: 1.5rem;
