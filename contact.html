@@ -78,6 +78,7 @@
       <section class="card" aria-labelledby="form-heading">
         <h2 id="form-heading">Send us a Message</h2>
         <form name="contact" method="post" action="/thanks.html" class="contact-form" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact" />
           <p class="hidden" aria-hidden="true">
             <label>Don’t fill this out if you’re human: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
           </p>
