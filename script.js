@@ -32,14 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
         initializeCounter();
     }
 
-    // Handle contact form if present
-    const contactForm = document.querySelector('form[action="https://api.web3forms.com/submit"]');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            console.log('Contact form submitted');
-        });
-    }
-
     // Setup navigation links
     const navigationLinks = document.querySelectorAll('.nav-links a');
     navigationLinks.forEach(link => {
